@@ -1,0 +1,1 @@
+<h1><?php echo sprintf(__('Welcome to  %s', 'passion'), osc_page_title()); ?></h1><h2>Buy or sell anything for free</h2>
