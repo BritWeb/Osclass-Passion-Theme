@@ -35,8 +35,12 @@
 <?php osc_current_web_theme_path('header.php') ; ?>
 <div class="clear"></div>
 <div class="latest_ads">
-<h1><strong><?php _e('Latest Listings', 'passion') ; ?></strong></h1>
- <?php if( osc_count_latest_items() == 0) { ?>
+<h1><strong><?php _e('Latest Listings', 'passion'); ?></strong></h1>
+
+<?php $search = Search::newInstance();
+View::newInstance()->_exportVariableToView('latestItems', $search->getLatestItems(osc_max_latest_items(), array(), true));
+
+if( osc_count_latest_items() == 0) { ?>
     <div class="clear"></div>
     <p class="empty"><?php _e("There aren't listings available at this moment", 'passion'); ?></p>
 <?php } else { ?>
